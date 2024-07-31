@@ -24,7 +24,7 @@ jobs:
       
       - name: Run radar
         id: radar
-        uses: auditware/radar-action-test@main
+        uses: auditware/radar-action@main
   
       - name: Upload SARIF file
         uses: github/codeql-action/upload-sarif@v3
