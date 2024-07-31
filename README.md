@@ -29,7 +29,7 @@ jobs:
       - name: Upload SARIF file
         uses: github/codeql-action/upload-sarif@v3
         with:
-          sarif_file: ${{ steps.radar.outputs.sarif }}
+          sarif_file: output.sarif
 ```
 
 ## Inputs
