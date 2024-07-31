@@ -1,0 +1,29 @@
+name: 'radar-action'
+
+description: 'Radar GitHub Action for Static Analysis.'
+
+inputs:
+  path:  
+    description: 'Path of the folder to be scanned.'
+    required: false
+    default: '.'
+
+outputs:
+  sarif:
+    description: 'SARIF output'
+    
+runs:
+  using: "composite"
+  steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Run entrypoint.sh
+      shell: bash
+      run: |
+        chmod +x ${{ github.action_path }}/entrypoint.sh
+        ${{ github.action_path }}/entrypoint.sh ${{ inputs.path }}
+
+branding:
+  icon: 'git-pull-request'
+  color: 'purple'
