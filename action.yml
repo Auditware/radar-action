@@ -1,16 +1,16 @@
 name: 'radar-action'
 
-description: 'Radar GitHub Action for Static Analysis.'
+description: 'Radar GitHub Action for Static Analysis'
 
 inputs:
   path:  
-    description: 'Path of the folder to be scanned.'
+    description: 'Path of the folder to be scanned'
     required: false
     default: '.'
-
-outputs:
-  sarif:
-    description: 'SARIF output'
+  ignore:  
+    description: 'Severities to be ignored (e.g. low,medium)'
+    required: false
+    default: ''
     
 runs:
   using: "composite"
@@ -22,7 +22,7 @@ runs:
       shell: bash
       run: |
         chmod +x ${{ github.action_path }}/entrypoint.sh
-        ${{ github.action_path }}/entrypoint.sh ${{ inputs.path }}
+        ${{ github.action_path }}/entrypoint.sh ${{ inputs.path }} ${{ inputs.ignore }}
 
 branding:
   icon: 'git-pull-request'

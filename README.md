@@ -25,6 +25,9 @@ jobs:
       - name: Run radar
         id: radar
         uses: auditware/radar-action@main
+        with:
+          path: "."
+          ignore: "low"
   
       - name: Upload SARIF file
         uses: github/codeql-action/upload-sarif@v3
@@ -36,15 +39,9 @@ jobs:
 
 | Input                 | Description                                 | Required | Default | 
 |-----------------------|---------------------------------------------|----------|---------|
-| `path`                | Path of the folder to be scanned.           | `false`  | `.`     |
-
-
-
-## Outputs
-
-| Output           | Description                                                           |
-|------------------|-----------------------------------------------------------------------|
-| `sarif`          | SARIF output                                                          |
+| `path`                | Path of the folder to be scanned.           | `true`   | `.`     |
+|-----------------------|---------------------------------------------|----------|---------|
+| `ignore`              | Severities to be ignored (e.g. low,medium)  | `false`  |         |
 
 
 Experimental, use at your own risk. for support reach out to the Audit Wizard [Discord](https://discord.gg/8PTTMd96p4).
