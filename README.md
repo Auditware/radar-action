@@ -12,15 +12,14 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       security-events: write
-      # uncomment if necessary on private repos
-      # actions: read
-      # contents: read
+      actions: read
+      contents: read
       
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          submodules: 'true' # 'recursive'
+          submodules: 'recursive'
       
       - name: Run radar
         id: radar
