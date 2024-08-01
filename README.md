@@ -40,7 +40,6 @@ jobs:
 | Input                 | Description                                 | Required | Default | 
 |-----------------------|---------------------------------------------|----------|---------|
 | `path`                | Path of the folder to be scanned.           | `true`   | `.`     |
-|-----------------------|---------------------------------------------|----------|---------|
 | `ignore`              | Severities to be ignored (e.g. low,medium)  | `false`  |         |
 
 
