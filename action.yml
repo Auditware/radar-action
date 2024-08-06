@@ -1,6 +1,6 @@
 name: 'radar-action'
 
-description: 'Radar GitHub Action for Static Analysis'
+description: 'Solana Static Analysis of Anchor Rust programs using Radar'
 
 inputs:
   path:  
